@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="index.html">Home</a>
+    <a href="another.html">Another</a>
+
+    <h1>Hello World</h1>
+    <h1>This is Inline Javascript</h1>
+
+    <button onclick="alert('Ciao Inline')">Click Me</button>
+
+    <h1>This is Internal Javascript</h1>
+    <button class="btn">internal button</button>
+    <button class="btn">internal button</button>
+    <button class="btn">internal button</button>
+    <button class="btn">internal button</button>
+    <button class="btn">internal button</button>
+
+    <!-- Internal Javascript -->
+    <script>
+      document.querySelectorAll('.btn').forEach((item) => {
+        item.addEventListener('click', () => {
+          alert('Hallo Internal');
+        });
+      });
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
