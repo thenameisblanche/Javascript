@@ -1,18 +1,51 @@
-// CURRENT TARGET VS TARGET
+// JSON.stringify(), JSON.parse()
 
-// currentTarget - always refers to the element to which the event handler has been attached to
+const friends = ['john', 'peter', 'bob'];
 
-// target - identifies the element on which the event occured
+// not storing as an array
+// localStorage.setItem('friends', friends);
 
-// WHEN THERE IS A NESTED ELEMENT
+// Access it
+// const values = localStorage.getItem('friends');
+// console.log(values);
+// will output j, because it is not array anymore
+// console.log(values[0]);
+// // everything is back to string, even when stored array
 
-const btn = document.querySelectorAll('.btn');
+// JSON.stringify will convert value to JSON string
 
-// GOAL: ADD COLOR TO CLICKED BUTTON
+// JSON.parse will get back the initial value
 
-btn.forEach(function (item) {
-  item.addEventListener('click', function (event) {
-    console.log(event.currentTarget);
-    event.currentTarget.style.color = 'blue';
-  });
-});
+localStorage.setItem('friends', JSON.stringify(friends));
+
+//WITHOUT PARSE
+// const values = localStorage.getItem('friends');
+// console.log(values);
+// // will return '['
+// console.log(values[0]);
+
+// WITH PARSE
+const values = JSON.parse(localStorage.getItem('friends'));
+console.log(values);
+// will return 'john'
+console.log(values[0]);
+
+// CHECK VALUE
+// If Stored Locally, Assign
+// If not, empty array
+
+let fruits;
+
+if (localStorage.getItem('fruits')) {
+  fruits = JSON.parse(localStorage.getItem('fruits'));
+} else {
+  fruits = [];
+}
+
+// Add a string to fruits
+console.log(fruits);
+// fruits.push('apple');
+// will push
+fruits.push('orange');
+
+localStorage.setItem('fruits', JSON.stringify(fruits));

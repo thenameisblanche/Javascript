@@ -5,7 +5,7 @@
 
 // const btn = document.querySelector('.btn');
 
-// event, and do? mostly callback function
+// event, and do what? mostly callback function
 // callback function is good when you dont want to run right away
 // anonymous function or reference
 
